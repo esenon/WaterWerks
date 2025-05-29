@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WaterWerks Pressure Washing</title>
+  <link rel="icon" href="images/favicon.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <meta name="description" content="WaterWerks offers expert pressure washing & exterior window cleaning in the Quad Cities. Get a free quote today!" />
+  <meta property="og:title" content="WaterWerks Pressure Washing" />
+  <meta property="og:description" content="Expert exterior cleaning in the Quad Cities. Contact us now." />
+  <meta property="og:image" content="images/preview.jpg" />
+  <meta property="og:url" content="https://yourdomain.com" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #eee;
+      overflow-x: hidden;
+      opacity: 0;
+      transition: opacity 1.5s ease;
+    }
+
+    body.loaded {
+      opacity: 1;
+    }
+
+    .navbar {
+      background-color: #3167af;
+      height: auto;
+      position: relative;
+      top: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 30px;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .location,
+    .phone-number {
+      font-size: 16px;
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    .logo-container {
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    .logo-container img {
+      height: 100px;
+      width: auto;
+      max-width: 200px;
+      object-fit: contain;
+    }
+
+    .menu {
+      background-color: #001f3f;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 10px 0;
+    }
+
+    .menu a {
+      color: white;
+      text-decoration: none;
+      margin: 0 20px;
+      font-size: 18px;
+      position: sticky;
+      transition: color 0.3s ease;
+    }
+
+    .menu a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 100%;
+      height: 2px;
+      background-color: #3167af;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.3s ease;
+    }
+
+    .menu a:hover {
+      color: #3167af;
+    }
+
+    .menu a:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    .cta-button {
+      background-color: #3167af;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #003f80;
+    }
+
+    .dirty-section {
+      position: relative;
+      height: 33vh;
+      background-color: #3167af; /* Replace this with the main color from your image */
+      background-image: url(images/redesignlogo.jpg);
+      background-repeat: no-repeat;
+      background-position: top center;
+      background-size: contain;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+    }
+
+
+    .dirty-section h1 {
+      font-size: 40px;
+      font-weight: 700;
+      z-index: 2;
+    }
+
+    .dirty-section h2 {
+      font-size: 22px;
+      font-weight: 400;
+      z-index: 2;
+    }
+
+    #bubbleCanvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .services-bar {
+      background-color: #cce0ff;
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    .services-bar a {
+      color: #003366;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: 600;
+      font-size: 16px;
+      transition: font-size 0.3s ease;
+    }
+
+    .services-bar a:hover {
+      font-size: 17px;
+      text-decoration: underline;
+    }
+
+    .content {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .content h1 {
+      font-size: 36px;
+      color: #001f3f;
+      margin-bottom: 20px;
+    }
+
+    .content p,
+    .intro-paragraph {
+      font-size: 18px;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .testimonials {
+      background: #f9f9f9;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .testimonials h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: #3167af;
+    }
+
+    .testimonials blockquote {
+      font-style: italic;
+      color: #333;
+      max-width: 700px;
+      margin: 0 auto 20px;
+      line-height: 1.5;
+    }
+
+    footer {
+      background: #001f3f;
+      color: #fff;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    footer .footer-logo img {
+      width: 400px;
+      height: auto;
+      margin-bottom: 20px;
+    }
+
+    footer .footer-links a {
+      color: #ccc;
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: 16px;
+    }
+
+    footer .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    footer .footer-info {
+      font-size: 16px;
+      margin: 20px 0;
+    }
+
+    footer .footer-info p {
+      margin-bottom: 10px;
+    }
+
+    /* Fade-in Scroll Effect */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 1s ease-out, transform 1s ease-out;
+    }
+
+    .fade-in.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .menu {
+        flex-direction: column;
+      }
+
+      .menu a {
+        margin: 10px 0;
+      }
+
+      .services-bar a {
+        display: block;
+        margin: 10px 0;
+      }
+
+      .phone-number,
+      .location {
+        font-size: 14px;
+      }
+
+      .logo-container img {
+        height: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="navbar">
+    <div class="location">Quad Cities & Surrounding Areas</div>
+    <div class="logo-container">
+      <img src="images/logo.png" alt="WaterWerks Logo" />
+    </div>
+    <div class="phone-number">Call or Text us at: (309) 507-6816</div>
+  </div>
+
+  <!-- Menu -->
+  <div class="menu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- Dirty Section -->
+  <div class="dirty-section fade-in">
+    <canvas id="bubbleCanvas"></canvas>
+  </div>
+
+  <!-- Services Bar -->
+  <nav class="services-bar fade-in">
+    <a href="services.html">Our Services:</a>
+    <a href="siding.html">Siding Softwash</a>
+    <a href="windows.html">Window Cleaning</a>
+    <a href="concrete.html">Concrete & Brick Cleaning</a>
+    <a href="railing.html">Railings Pressure Washing</a>
+    <a href="screen.html">Screen Cleaning</a>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="content fade-in">
+    <h1>Welcome to WaterWerks</h1>
+    <p>Your trusted experts for pressure washing and window cleaning.</p>
+    <p class="intro-paragraph">
+      At WaterWerks, we take pride in providing exceptional exterior cleaning services that go above and beyond. From sparkling clean windows to spotless driveways, we specialize in restoring the beauty of your property using the latest technology and eco-friendly techniques. Whether you’re looking to boost curb appeal, maintain your property, or prepare for a special event, we’re here to help. Our expert team is dedicated to delivering superior results that leave a lasting impression, ensuring that your home or business always looks its best.
+    </p>
+  </div>
+
+  <!-- Testimonials -->
+  <section class="testimonials fade-in">
+    <h2>What Our Customers Say</h2>
+    <blockquote>"WaterWerks did a fantastic job my house looks awesome wowowowowoowwowwowoowowwowowoowowowowoowowowoow i will request waterwerk to clean my house every day!" – Esref</blockquote>
+    <blockquote>"Super responsive and thorough. Highly recommend for window cleaning!" – waterwerks</blockquote>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-logo">
+      <img src="images/logolight.png" alt="WaterWerks Logo" />
+    </div>
+    <div class="footer-info">
+      <p>Serving the Quad Cities & Surrounding Areas</p>
+      <p>Hours: Mon-Fri: 3:30 - 8:00 PM | Sat: 9:00 AM - 3:00 PM</p>
+      <p>Contact us: (309) 507-6816</p>
+    </div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+      
+    </div>
+    <p>Website by <a href="https://esenon.github.io/YAKAMOZ/" target="_blank">YAKAMOZ DESIGN</a></p>
+  </footer>
+
+  <!-- Bubbles Script -->
+  <script>
+    const canvas = document.getElementById('bubbleCanvas');
+    const ctx = canvas.getContext('2d');
+
+    function resizeCanvas() {
+      canvas.width = canvas.parentElement.offsetWidth;
+      canvas.height = canvas.parentElement.offsetHeight;
+    }
+
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    class Bubble {
+      constructor(x, y) {
+        this.x = x;
+        this.y = y;
+        this.radius = Math.random() * 10 + 5;
+        this.dx = Math.random() * 2;
+        this.dy = (Math.random() - 0.5) * 2;
+        this.alpha = 1;
+        this.color = Math.random() < 0.5 ? 'rgba(255, 255, 255, 0.7)' : 'rgba(0, 153, 255, 0.5)';
+      }
+
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fillStyle = this.color;
+        ctx.fill();
+        ctx.closePath();
+      }
+
+      update() {
+        this.x += this.dx;
+        this.y += this.dy;
+        this.alpha -= 0.01;
+        this.radius *= 0.99;
+      }
+    }
+
+    let bubbles = [];
+
+    const dirtySection = document.querySelector('.dirty-section');
+    dirtySection.addEventListener('mousemove', (e) => {
+      const rect = dirtySection.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      for (let i = 0; i < 2; i++) {
+        const offsetX = (Math.random() - 0.5) * 10;
+        const offsetY = (Math.random() - 0.5) * 10;
+        bubbles.push(new Bubble(x + offsetX, y + offsetY));
+      }
+    });
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      bubbles = bubbles.filter(b => b.alpha > 0 && b.radius > 0);
+      bubbles.forEach(b => {
+        b.update();
+        b.draw();
+      });
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+  </script>
+
+  <!-- Fade-in Animation -->
+  <script>
+    window.addEventListener('load', () => {
+      document.body.classList.add('loaded');
+    });
+
+    const faders = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    faders.forEach(fader => observer.observe(fader));
+  </script>
+
+</body>
+</html>

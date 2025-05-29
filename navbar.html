@@ -1,0 +1,85 @@
+<style>
+    .navbar {
+        background-color: #3167af;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 30px;
+        z-index: 1000;
+        position: sticky;
+        top: 0;
+        gap: 30px;
+        flex-wrap: wrap;
+        text-align: center;
+    }
+
+    .location, .phone-number {
+        font-size: 16px;
+        color: #ffffff;
+        font-weight: 600;
+    }
+
+    .logo-container img {
+        height: 80px;
+        object-fit: contain;
+    }
+
+    .menu {
+        background-color: #001f3f;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 0;
+        position: sticky;
+        top: 100px;
+        z-index: 999;
+    }
+
+    .menu a {
+        color: white;
+        text-decoration: none;
+        margin: 0 20px;
+        font-size: 18px;
+        position: relative;
+        transition: color 0.3s ease;
+    }
+
+    .menu a::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -5px;
+        width: 100%;
+        height: 2px;
+        background-color: #3167af;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.3s ease;
+    }
+
+    .menu a:hover {
+        color: #3167af;
+    }
+
+    .menu a:hover::after {
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+</style>
+
+<div class="navbar">
+    <div class="location">Serving the Quad Cities & Surrounding Areas</div>
+    <div class="logo-container">
+        <img src="C:/Users/YASEMIN/Downloads/w-removebg-preview.png" alt="WaterWerks Logo" />
+    </div>
+    <div class="phone-number">Call or Text today: (309) 507-6816</div>
+</div>
+
+<div class="menu">
+    <a href="index.html">Home</a>
+    <a href="#">About</a>
+    <a href="services.html">Services</a>
+    <a href="#">Contact</a>
+    
+</div>

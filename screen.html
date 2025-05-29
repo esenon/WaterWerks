@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Screen Cleaning - WaterWerks</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+
+    .menu {
+      background-color: #001f3f;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px 0;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .menu a {
+      color: white;
+      text-decoration: none;
+      margin: 0 20px;
+      font-size: 18px;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    .menu a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 100%;
+      height: 2px;
+      background-color: #3167af;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.3s ease;
+    }
+
+    .menu a:hover {
+      color: #3167af;
+    }
+
+    .menu a:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    header {
+      background-color: #3167af;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .service-details {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .service-details h1 {
+      color: #001f3f;
+      margin-bottom: 10px;
+    }
+
+    .service-details p {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .service-image {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background-color: #3167af;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #003d7a;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky Menu Bar -->
+  <div class="menu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- Page Header -->
+  <header>
+    <h1>Screen Cleaning</h1>
+    <p>Ensure a Clear View with Clean Window Screens</p>
+  </header>
+
+  <section class="service-details">
+    <img src="https://via.placeholder.com/1200x600" alt="Window Washing" class="service-image">
+    
+    <h2>At WaterWerks, We Take Pride in Our Screen Cleaning Services</h2>
+    <p> Dirty window screens can ruin the appearance of your home or business and bring in dust and dirt. At WaterWerks, we offer professional screen cleaning services to keep your windows looking fresh and functional.</p>
+     <p>We remove dust, dirt, and debris from your window screens and frames, restoring their clarity and efficiency. Whether it’s for a home or commercial property, our team ensures your screens are spotless and free from buildup, allowing for a clearer, more enjoyable view.</p>
+    </ul>
+
+    <h3>What Do We offer in Our Screen Cleaning Service?</h3>
+    <p>We carefully clean all types of window screens, removing dirt, pollen, and grime, leaving them looking like new.
+    </p>
+
+    <p>Our team uses professional-grade equipment to give your home a fresh, clean appearance. We make sure to follow all safety protocols and take every precaution to protect your property during the cleaning process.</p>
+    
+    <a href="contact.html" class="cta-button">Request a Quote</a>
+  </section>
+
+</body>
+</html>
